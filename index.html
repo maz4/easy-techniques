@@ -96,12 +96,8 @@
             <div
               class="technique-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300"
             >
-              <div
-                class="video-placeholder h-48 flex items-center justify-center"
-              >
-                <i
-                  class="fas fa-play-circle text-5xl text-blue-400 opacity-70"
-                ></i>
+              <div class="aspect-w-16 aspect-h-9 w-full">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HbUxXJKitS4" title="Ginga Capoeira" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="rounded-t-lg"></iframe>
               </div>
               <div class="p-6">
                 <div class="flex justify-between items-start">
@@ -2265,29 +2261,15 @@
           this.classList.add("active");
           document.getElementById("englishBtn").classList.remove("active");
         });
+    </script>
+  </body>
+</html>
 
-      // Sample technique data - in a real app this would come from a database
-      const techniques = [
-        {
-          id: 1,
-          name: "Ginga",
-          category: "movements",
-          description: "Perform the ginga with correct hand and foot sequence",
-          jpDescription: "の手足を正しい順序で動かせる",
-          difficulty: "Basic",
-          duration: "2 min",
-        },
-        {
-          id: 2,
-          name: "Paralela",
-          category: "movements",
-          description: "Can perform paralela stance",
-          jpDescription: "が出来る",
-          difficulty: "Basic",
-          duration: "1 min",
-        },
-        // ... all other techniques would be listed here
-      ];
+        .addEventListener("click", function () {
+          document.body.classList.add("japanese-mode");
+          this.classList.add("active");
+          document.getElementById("englishBtn").classList.remove("active");
+        });
     </script>
   </body>
 </html>
