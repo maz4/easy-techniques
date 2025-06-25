@@ -97,7 +97,16 @@
               class="technique-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300"
             >
               <div class="aspect-w-16 aspect-h-9 w-full">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HbUxXJKitS4" title="Ginga Capoeira" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="rounded-t-lg"></iframe>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/HbUxXJKitS4"
+                  title="Ginga Capoeira"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  class="rounded-t-lg"
+                ></iframe>
               </div>
               <div class="p-6">
                 <div class="flex justify-between items-start">
@@ -2244,6 +2253,15 @@
       </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button
+      id="backToTopBtn"
+      class="hidden fixed bottom-8 right-8 z-50 bg-blue-700 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-900 transition duration-300"
+      aria-label="Back to top"
+    >
+      <i class="fas fa-arrow-up mr-2"></i>Top
+    </button>
+
     <script>
       // Language toggle functionality
       document
@@ -2261,15 +2279,19 @@
           this.classList.add("active");
           document.getElementById("englishBtn").classList.remove("active");
         });
-    </script>
-  </body>
-</html>
 
-        .addEventListener("click", function () {
-          document.body.classList.add("japanese-mode");
-          this.classList.add("active");
-          document.getElementById("englishBtn").classList.remove("active");
-        });
+      // Back to Top Button functionality
+      const backToTopBtn = document.getElementById("backToTopBtn");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+          backToTopBtn.classList.remove("hidden");
+        } else {
+          backToTopBtn.classList.add("hidden");
+        }
+      });
+      backToTopBtn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     </script>
   </body>
 </html>
