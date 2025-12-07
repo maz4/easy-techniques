@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #f3f4f6;
+}
+
+.video-placeholder {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+.technique-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.language-toggle {
+  transition: all 0.3s ease;
+}
+
+.language-toggle.active {
+  background-color: #1e40af;
+  color: white;
+}
+
+.category-title {
+  background: linear-gradient(90deg, #1e40af, #9333ea);
+}
+
+.japanese {
+  display: none;
+}
+
+.japanese-mode .english {
+  display: none;
+}
+
+.japanese-mode .japanese {
+  display: block;
+}
+
+.legacy-shell {
+  min-height: 100vh;
+}
