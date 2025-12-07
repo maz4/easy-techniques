@@ -18,10 +18,9 @@ export function loadLegacyPage(slug: string): LegacyPage {
     raw.match(/<body[^>]*class="(?<class>[^"]*)"/i)?.groups?.class?.trim() ??
     "";
   const bodyContent =
-    raw.match(/<body[^>]*>(?<body>[\\s\\S]*?)<\\/body>/i)?.groups?.body ??
-    raw;
+    raw.match(/<body[^>]*>(?<body>[\s\S]*?)<\/body>/i)?.groups?.body ?? raw;
 
-  const html = bodyContent.replace(/<script[\\s\\S]*?<\\/script>/gi, "").trim();
+  const html = bodyContent.replace(/<script[\s\S]*?<\/script>/gi, "").trim();
 
   return {
     html,
