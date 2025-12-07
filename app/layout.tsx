@@ -7,7 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Capoeira Techniques",
   description:
-    "Capoeira technique library rendered with Next.js and server-side compilation."
+    "Capoeira technique library rendered with Next.js and server-side compilation.",
+  manifest: "/manifest.json",
+  themeColor: "#0f172a"
 };
 
 export default function RootLayout({
