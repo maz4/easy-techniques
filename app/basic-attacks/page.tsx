@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { TechniqueCard } from "../../components/TechniqueCard";
 
 type Language = "english" | "japanese";
 
@@ -116,42 +117,6 @@ export default function BasicAttacksPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const renderTechniqueCard = (technique: Technique) => (
-    <div
-      key={technique.id}
-      className="technique-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300"
-    >
-      {technique.video ? (
-        <div className="relative w-full pb-[56.25%]">
-          <iframe
-            className="absolute inset-0 w-full h-full rounded-t-lg"
-            src={technique.video}
-            title={technique.name}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
-      ) : (
-        <div className="video-placeholder relative w-full pb-[56.25%]">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <i className="fas fa-play-circle text-5xl text-blue-400 opacity-70" />
-          </div>
-        </div>
-      )}
-
-      <div className="p-6">
-        <div className="flex justify-between items-start">
-          <h3 className="text-xl font-bold text-gray-800">
-            {technique.id}. {technique.name}
-          </h3>
-          <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">
-            {technique.badge}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className={language === "japanese" ? "japanese-mode" : ""}>
       <header className="bg-gradient-to-r from-blue-900 to-purple-800 text-white shadow-lg">
@@ -214,7 +179,16 @@ export default function BasicAttacksPage() {
               <span className="japanese">{t.rotating.japanese}</span>
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {rotating.map(renderTechniqueCard)}
+              {rotating.map((technique) => (
+                <TechniqueCard
+                  key={technique.id}
+                  id={technique.id}
+                  name={technique.name}
+                  video={technique.video}
+                  badge={technique.badge}
+                  badgeClassName="bg-yellow-100 text-yellow-800"
+                />
+              ))}
             </div>
           </div>
 
@@ -224,7 +198,16 @@ export default function BasicAttacksPage() {
               <span className="japanese">{t.linear.japanese}</span>
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {linear.map(renderTechniqueCard)}
+              {linear.map((technique) => (
+                <TechniqueCard
+                  key={technique.id}
+                  id={technique.id}
+                  name={technique.name}
+                  video={technique.video}
+                  badge={technique.badge}
+                  badgeClassName="bg-yellow-100 text-yellow-800"
+                />
+              ))}
             </div>
           </div>
         </div>
