@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { TechniqueCard } from "../../components/TechniqueCard";
+import { TechniqueSection } from "../../components/TechniqueSection";
 
 type Language = "english" | "japanese";
 
@@ -121,7 +122,10 @@ export default function AdvancedAttacksPage() {
             <span className="english">{t.title.english}</span>
             <span className="japanese">{t.title.japanese}</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <TechniqueSection
+            englishTitle={t.title.english}
+            japaneseTitle={t.title.japanese}
+          >
             {techniques.map((technique) => (
               <TechniqueCard
                 key={technique.id}
@@ -132,7 +136,7 @@ export default function AdvancedAttacksPage() {
                 badgeClassName="bg-red-100 text-red-800"
               />
             ))}
-          </div>
+          </TechniqueSection>
         </div>
       </main>
 

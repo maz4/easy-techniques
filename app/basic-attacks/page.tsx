@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { TechniqueCard } from "../../components/TechniqueCard";
+import { TechniqueSection } from "../../components/TechniqueSection";
 
 type Language = "english" | "japanese";
 
@@ -173,43 +174,37 @@ export default function BasicAttacksPage() {
             <span className="japanese">{t.title.japanese}</span>
           </h2>
 
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">
-              <span className="english">{t.rotating.english}</span>
-              <span className="japanese">{t.rotating.japanese}</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {rotating.map((technique) => (
-                <TechniqueCard
-                  key={technique.id}
-                  id={technique.id}
-                  name={technique.name}
-                  video={technique.video}
-                  badge={technique.badge}
-                  badgeClassName="bg-yellow-100 text-yellow-800"
-                />
-              ))}
-            </div>
-          </div>
+          <TechniqueSection
+            englishTitle={t.rotating.english}
+            japaneseTitle={t.rotating.japanese}
+          >
+            {rotating.map((technique) => (
+              <TechniqueCard
+                key={technique.id}
+                id={technique.id}
+                name={technique.name}
+                video={technique.video}
+                badge={technique.badge}
+                badgeClassName="bg-yellow-100 text-yellow-800"
+              />
+            ))}
+          </TechniqueSection>
 
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">
-              <span className="english">{t.linear.english}</span>
-              <span className="japanese">{t.linear.japanese}</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {linear.map((technique) => (
-                <TechniqueCard
-                  key={technique.id}
-                  id={technique.id}
-                  name={technique.name}
-                  video={technique.video}
-                  badge={technique.badge}
-                  badgeClassName="bg-yellow-100 text-yellow-800"
-                />
-              ))}
-            </div>
-          </div>
+          <TechniqueSection
+            englishTitle={t.linear.english}
+            japaneseTitle={t.linear.japanese}
+          >
+            {linear.map((technique) => (
+              <TechniqueCard
+                key={technique.id}
+                id={technique.id}
+                name={technique.name}
+                video={technique.video}
+                badge={technique.badge}
+                badgeClassName="bg-yellow-100 text-yellow-800"
+              />
+            ))}
+          </TechniqueSection>
         </div>
       </main>
 
