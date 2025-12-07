@@ -134,6 +134,7 @@ export default function AdvancedAttacksPage() {
                 video={technique.video}
                 badge={technique.badge ?? ""}
                 badgeClassName="bg-red-100 text-red-800"
+                language={language}
               />
             ))}
           </TechniqueSection>

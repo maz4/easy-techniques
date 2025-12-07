@@ -125,6 +125,7 @@ export default function EsquivasPage() {
                 video={technique.video}
                 badge={technique.badge}
                 badgeClassName="bg-green-100 text-green-800"
+                language={language}
               />
             ))}
           </TechniqueSection>

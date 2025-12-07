@@ -133,6 +133,7 @@ export default function FloreioPage() {
                 video={technique.video}
                 badge={technique.badge}
                 badgeClassName="bg-purple-100 text-purple-800"
+                language={language}
               />
             ))}
           </TechniqueSection>

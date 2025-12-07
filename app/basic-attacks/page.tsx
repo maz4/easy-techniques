@@ -186,6 +186,7 @@ export default function BasicAttacksPage() {
                 video={technique.video}
                 badge={technique.badge}
                 badgeClassName="bg-yellow-100 text-yellow-800"
+                language={language}
               />
             ))}
           </TechniqueSection>
@@ -202,6 +203,7 @@ export default function BasicAttacksPage() {
                 video={technique.video}
                 badge={technique.badge}
                 badgeClassName="bg-yellow-100 text-yellow-800"
+                language={language}
               />
             ))}
           </TechniqueSection>

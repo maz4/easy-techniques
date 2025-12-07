@@ -171,6 +171,7 @@ export default function MovementsPage() {
                 video={technique.video}
                 badge={technique.badge ?? ""}
                 badgeClassName="bg-blue-100 text-blue-800"
+                language={language}
               />
             ))}
           </TechniqueSection>

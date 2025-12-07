@@ -178,6 +178,7 @@ export default function OtherAttacksPage() {
                 video={technique.video}
                 badge={technique.badge}
                 badgeClassName="bg-orange-100 text-orange-800"
+                language={language}
               />
             ))}
           </TechniqueSection>
